@@ -1,0 +1,46 @@
+# Local development: database + email catcher + backend.
+#   docker compose up --build
+# Then run the frontend separately: cd frontend && npm run dev
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: portfolio
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: portfolio
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio -d portfolio"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # Catches outgoing emails. Open http://localhost:8025 to read them.
+  mailpit:
+    image: axllent/mailpit:v1.20
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/portfolio
+      DATABASE_USERNAME: portfolio
+      DATABASE_PASSWORD: portfolio
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+      APP_CORS_ORIGINS: http://localhost:5173
+      CONTACT_NOTIFY_TO: you@example.com
+      GITHUB_USERNAME: ${GITHUB_USERNAME:-octocat}
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata:

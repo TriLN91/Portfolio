@@ -1,0 +1,131 @@
+import type { L } from '../content/types'
+
+/** Interface text (buttons, headings). Personal content lives in content/profile.ts */
+export const ui = {
+  nav: {
+    about: { en: 'About', vi: 'Giới thiệu' },
+    work: { en: 'Projects', vi: 'Dự án' },
+    skills: { en: 'Skills', vi: 'Kỹ năng' },
+    experience: { en: 'Experience', vi: 'Kinh nghiệm' },
+    contact: { en: 'Contact', vi: 'Liên hệ' },
+    cv: { en: 'CV', vi: 'CV' },
+    menu: { en: 'Menu', vi: 'Menu' },
+    close: { en: 'Close', vi: 'Đóng' },
+  },
+  hero: {
+    viewWork: { en: 'See my projects', vi: 'Xem dự án' },
+    viewCv: { en: 'View CV', vi: 'Xem CV' },
+    scroll: { en: 'Scroll — watch it grow', vi: 'Cuộn xuống để cây lớn lên' },
+    growth: { en: 'Growth', vi: 'Phát triển' },
+  },
+  about: {
+    eyebrow: { en: 'About', vi: 'Giới thiệu' },
+    title: { en: 'How I work', vi: 'Cách tôi làm việc' },
+    summary: { en: '30-second summary', vi: 'Tóm tắt 30 giây' },
+    contactMe: { en: 'Contact me', vi: 'Liên hệ' },
+  },
+  work: {
+    eyebrow: { en: 'Selected work', vi: 'Dự án tiêu biểu' },
+    title: { en: "Products I've built", vi: 'Sản phẩm tôi đã làm' },
+    intro: {
+      en: 'Each project shows the product, the problem it solves, my part in it and the result.',
+      vi: 'Mỗi dự án cho thấy sản phẩm, vấn đề nó giải quyết, phần việc của tôi và kết quả.',
+    },
+    myRole: { en: 'My role', vi: 'Vai trò' },
+    caseStudy: { en: 'Read case study', vi: 'Xem chi tiết' },
+    demo: { en: 'Live demo', vi: 'Demo' },
+    code: { en: 'Code', vi: 'Mã nguồn' },
+    view: { en: 'View', vi: 'Xem' },
+    status: {
+      live: { en: 'Live', vi: 'Đang chạy' },
+      completed: { en: 'Completed', vi: 'Hoàn thành' },
+      'in-progress': { en: 'In progress', vi: 'Đang làm' },
+    },
+  },
+  detail: {
+    back: { en: 'All projects', vi: 'Tất cả dự án' },
+    problem: { en: 'Problem', vi: 'Vấn đề' },
+    solution: { en: 'Solution', vi: 'Giải pháp' },
+    architecture: { en: 'Architecture', vi: 'Kiến trúc' },
+    decisions: { en: 'Key decisions', vi: 'Quyết định kỹ thuật' },
+    results: { en: 'Results', vi: 'Kết quả' },
+    learnings: { en: 'What I learned', vi: 'Bài học' },
+    impact: { en: 'Highlights', vi: 'Điểm nổi bật' },
+    stack: { en: 'Stack', vi: 'Công nghệ' },
+    year: { en: 'Year', vi: 'Năm' },
+    next: { en: 'Next project', vi: 'Dự án tiếp theo' },
+    notFound: { en: 'Project not found', vi: 'Không tìm thấy dự án' },
+  },
+  skills: {
+    eyebrow: { en: 'Toolkit', vi: 'Bộ công cụ' },
+    title: { en: 'Skills', vi: 'Kỹ năng' },
+    intro: {
+      en: 'Grouped by where I use them. Highlighted items are the ones I have shipped in real projects.',
+      vi: 'Nhóm theo nơi tôi sử dụng. Mục được tô màu là kỹ năng đã dùng trong dự án thật.',
+    },
+    core: { en: 'Used in shipped projects', vi: 'Đã dùng trong dự án thật' },
+    more: { en: 'Comfortable, still learning', vi: 'Sử dụng được, đang học thêm' },
+  },
+  experience: {
+    eyebrow: { en: 'Path so far', vi: 'Chặng đường' },
+    title: { en: 'Experience & education', vi: 'Kinh nghiệm & học vấn' },
+    types: {
+      work: { en: 'Work', vi: 'Công việc' },
+      education: { en: 'Education', vi: 'Học vấn' },
+      leadership: { en: 'Leadership', vi: 'Lãnh đạo' },
+    },
+  },
+  github: {
+    eyebrow: { en: 'Open source', vi: 'Mã nguồn mở' },
+    title: { en: 'On GitHub', vi: 'Trên GitHub' },
+    repos: { en: 'Public repos', vi: 'Repo công khai' },
+    stars: { en: 'Stars earned', vi: 'Lượt sao' },
+    followers: { en: 'Followers', vi: 'Người theo dõi' },
+    languages: { en: 'Languages by repository', vi: 'Ngôn ngữ theo repository' },
+    recent: { en: 'Recently updated', vi: 'Cập nhật gần đây' },
+    sample: {
+      en: 'Showing sample data. Live numbers appear when the backend is running.',
+      vi: 'Đang hiển thị dữ liệu mẫu. Số liệu thật sẽ hiện khi backend chạy.',
+    },
+    profile: { en: 'Open GitHub profile', vi: 'Mở trang GitHub' },
+  },
+  contact: {
+    eyebrow: { en: 'Contact', vi: 'Liên hệ' },
+    title: { en: "Let's talk about your team.", vi: 'Hãy trò chuyện về team của bạn.' },
+    name: { en: 'Your name', vi: 'Họ tên' },
+    email: { en: 'Email', vi: 'Email' },
+    company: { en: 'Company (optional)', vi: 'Công ty (không bắt buộc)' },
+    message: { en: 'Message', vi: 'Lời nhắn' },
+    send: { en: 'Send message', vi: 'Gửi tin nhắn' },
+    sending: { en: 'Sending…', vi: 'Đang gửi…' },
+    slow: {
+      en: 'The server is waking up (free hosting). This can take up to 30 seconds.',
+      vi: 'Server đang khởi động (hosting miễn phí). Có thể mất tới 30 giây.',
+    },
+    success: {
+      en: 'Thanks! Your message was received. I will reply by email soon.',
+      vi: 'Cảm ơn bạn! Tin nhắn đã được nhận. Tôi sẽ phản hồi qua email sớm.',
+    },
+    error: {
+      en: 'The message could not be sent. Please email me directly at the address above.',
+      vi: 'Chưa gửi được tin nhắn. Vui lòng email trực tiếp cho tôi theo địa chỉ ở trên.',
+    },
+    rateLimited: {
+      en: 'Too many messages from this network. Please try again in an hour or email me directly.',
+      vi: 'Bạn đã gửi quá nhiều tin nhắn. Vui lòng thử lại sau 1 giờ hoặc email trực tiếp.',
+    },
+    copy: { en: 'Copy', vi: 'Sao chép' },
+    copied: { en: 'Copied', vi: 'Đã chép' },
+    required: { en: 'Please fill in this field.', vi: 'Vui lòng điền mục này.' },
+    invalidEmail: { en: 'Please enter a valid email address.', vi: 'Email chưa đúng định dạng.' },
+    tooShort: { en: 'Please write at least 10 characters.', vi: 'Vui lòng viết ít nhất 10 ký tự.' },
+  },
+  footer: {
+    built: { en: 'Built with React, Three.js & Spring Boot', vi: 'Xây dựng bằng React, Three.js & Spring Boot' },
+    top: { en: 'Back to top', vi: 'Lên đầu trang' },
+  },
+  notFound: {
+    title: { en: 'This page did not grow here.', vi: 'Trang này không tồn tại.' },
+    home: { en: 'Go home', vi: 'Về trang chủ' },
+  },
+} satisfies Record<string, Record<string, L | Record<string, L>>>

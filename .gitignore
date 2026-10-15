@@ -1,0 +1,25 @@
+# Dependencies & builds
+node_modules/
+frontend/dist/
+backend/target/
+
+# Environment files (keep the .env.example files)
+.env
+.env.local
+.env.*.local
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local Claude preview config
+.claude/

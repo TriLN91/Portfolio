@@ -1,0 +1,51 @@
+# All values can be overridden with environment variables (see backend/.env.example)
+server:
+  port: ${PORT:8080}
+  # Trust X-Forwarded-* headers from the hosting proxy (Render) so we see real client IPs
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: portfolio-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/portfolio}
+    username: ${DATABASE_USERNAME:portfolio}
+    password: ${DATABASE_PASSWORD:portfolio}
+    hikari:
+      maximum-pool-size: 5
+  jpa:
+    # Flyway owns the schema (src/main/resources/db/migration)
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  flyway:
+    enabled: true
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail.smtp.auth: ${MAIL_SMTP_AUTH:false}
+      mail.smtp.starttls.enable: ${MAIL_STARTTLS:false}
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+app:
+  # Comma-separated list of frontend URLs allowed to call the API
+  cors-origins: ${APP_CORS_ORIGINS:http://localhost:5173}
+  contact:
+    notify-to: ${CONTACT_NOTIFY_TO:you@example.com}
+    from: ${CONTACT_FROM:portfolio@localhost}
+    max-per-hour: ${CONTACT_MAX_PER_HOUR:5}
+    ip-salt: ${CONTACT_IP_SALT:change-me}
+  github:
+    username: ${GITHUB_USERNAME:octocat}
+    token: ${GITHUB_TOKEN:}
+    cache-minutes: ${GITHUB_CACHE_MINUTES:60}
