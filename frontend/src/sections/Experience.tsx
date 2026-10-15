@@ -42,7 +42,7 @@ export function Experience() {
             <FadeIn as="li" key={i} delay={i * 0.06} className="relative pb-12 last:pb-0">
               <span className="absolute -left-8 top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-surface" />
               <div className="flex flex-wrap items-center gap-3">
-                <time className="font-mono text-xs tracking-wider text-muted">{item.period}</time>
+                {item.period && <time className="font-mono text-xs tracking-wider text-muted">{item.period}</time>}
                 <span className="pill">{t(ui.experience.types[item.type])}</span>
               </div>
               <h3 className="mb-1 mt-2 text-2xl font-bold">{t(item.title)}</h3>

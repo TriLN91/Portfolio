@@ -40,7 +40,7 @@ export function About() {
         <FadeIn delay={0.15} className="min-w-0 self-start lg:sticky lg:top-24">
           <aside className="overflow-hidden rounded-2xl border border-line bg-surface/90 backdrop-blur card-shadow">
             <header className="flex items-center gap-4 border-b border-dashed border-line p-6">
-              <div className="grid h-16 w-16 flex-none place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-accent to-signal font-display text-2xl font-extrabold text-white">
+              <div className="grid h-20 w-20 flex-none place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-accent to-signal font-display text-2xl font-extrabold text-white">
                 {profile.avatar ? <img src={profile.avatar} alt={profile.name} className="h-full w-full object-cover" /> : initials}
               </div>
               <div>

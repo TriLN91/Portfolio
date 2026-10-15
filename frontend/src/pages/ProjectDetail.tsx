@@ -51,7 +51,8 @@ function Detail({ index }: { index: number }) {
     { label: ui.work.myRole, value: t(project.role) },
     { label: ui.detail.year, value: project.year },
     { label: ui.detail.stack, value: project.stack.join(' · ') },
-  ]
+  ].filter((m) => m.value)
+  const decisions = cs.decisions ?? []
 
   return (
     <PageTransition>
@@ -74,7 +75,10 @@ function Detail({ index }: { index: number }) {
             <p className="max-w-[56ch] text-[clamp(18px,1.8vw,22px)] text-muted">{t(project.summary)}</p>
           </FadeIn>
 
-          <FadeIn delay={0.1} className="mt-10 grid gap-6 border-y border-line py-6 sm:grid-cols-3">
+          <FadeIn
+            delay={0.1}
+            className={`mt-10 grid gap-6 border-y border-line py-6 ${meta.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}
+          >
             {meta.map((m) => (
               <div key={m.label.en} className="min-w-0">
                 <div className="eyebrow mb-1.5">{t(m.label)}</div>
@@ -104,14 +108,16 @@ function Detail({ index }: { index: number }) {
           </div>
         </div>
 
-        <section className="wrap grid gap-4 sm:grid-cols-3">
-          {cs.results.map((r, i) => (
-            <FadeIn key={r.label.en} delay={i * 0.08} className="rounded-2xl bg-surface p-6 card-shadow">
-              <b className="block font-display text-[clamp(36px,4vw,52px)] font-bold leading-none text-accent">{r.value}</b>
-              <span className="mt-2 block text-sm text-muted">{t(r.label)}</span>
-            </FadeIn>
-          ))}
-        </section>
+        {cs.results && cs.results.length > 0 && (
+          <section className="wrap grid gap-4 sm:grid-cols-3">
+            {cs.results.map((r, i) => (
+              <FadeIn key={r.label.en} delay={i * 0.08} className="rounded-2xl bg-surface p-6 card-shadow">
+                <b className="block font-display text-[clamp(36px,4vw,52px)] font-bold leading-none text-accent">{r.value}</b>
+                <span className="mt-2 block text-sm text-muted">{t(r.label)}</span>
+              </FadeIn>
+            ))}
+          </section>
+        )}
 
         <section className="wrap grid gap-12 py-[clamp(64px,9vw,120px)] md:grid-cols-2">
           <FadeIn>
@@ -145,23 +151,29 @@ function Detail({ index }: { index: number }) {
               </ol>
             </div>
 
-            <div className="mt-16 grid gap-12 lg:grid-cols-[1.4fr_1fr]">
-              <div>
-                <h2 className="eyebrow mb-5">{t(ui.detail.decisions)}</h2>
-                <ul className="grid gap-4">
-                  {cs.decisions.map((d, i) => (
-                    <FadeIn as="li" key={i} delay={i * 0.06} className="flex gap-4 border-t border-line pt-4 text-lg">
-                      <span className="mt-1 font-mono text-sm text-signal">→</span>
-                      {t(d)}
-                    </FadeIn>
-                  ))}
-                </ul>
+            {(decisions.length > 0 || cs.learnings) && (
+              <div className={`mt-16 grid gap-12 ${cs.learnings && decisions.length > 0 ? 'lg:grid-cols-[1.4fr_1fr]' : ''}`}>
+                {decisions.length > 0 && (
+                  <div>
+                    <h2 className="eyebrow mb-5">{t(ui.detail.decisions)}</h2>
+                    <ul className="grid max-w-[70ch] gap-4">
+                      {decisions.map((d, i) => (
+                        <FadeIn as="li" key={i} delay={i * 0.06} className="flex gap-4 border-t border-line pt-4 text-lg">
+                          <span className="mt-1 font-mono text-sm text-signal">→</span>
+                          {t(d)}
+                        </FadeIn>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {cs.learnings && (
+                  <FadeIn delay={0.1} className="self-start rounded-2xl bg-ink p-7 text-bg">
+                    <h2 className="eyebrow mb-3 !text-bg/60">{t(ui.detail.learnings)}</h2>
+                    <p className="font-display text-2xl font-medium leading-snug">{t(cs.learnings)}</p>
+                  </FadeIn>
+                )}
               </div>
-              <FadeIn delay={0.1} className="self-start rounded-2xl bg-ink p-7 text-bg">
-                <h2 className="eyebrow mb-3 !text-bg/60">{t(ui.detail.learnings)}</h2>
-                <p className="font-display text-2xl font-medium leading-snug">{t(cs.learnings)}</p>
-              </FadeIn>
-            </div>
+            )}
           </div>
         </section>
 

@@ -3,27 +3,23 @@ import { FadeIn, SplitText } from '../components/Reveal'
 import { profile } from '../content/profile'
 import { useLang } from '../i18n/LanguageProvider'
 import { ui } from '../i18n/strings'
-import { getGitHubStats, type GitHubStats } from '../lib/api'
+import { getGitHubStats, getGitHubStatsDirect, type GitHubStats } from '../lib/api'
 
 /** Shown when the backend is not reachable, so the section never looks broken */
 const SAMPLE: GitHubStats = {
   username: profile.githubUsername,
   profileUrl: `https://github.com/${profile.githubUsername}`,
-  publicRepos: 18,
-  followers: 24,
-  totalStars: 41,
+  publicRepos: 0,
+  followers: 0,
+  totalStars: 0,
   languages: [
-    { name: 'Java', repos: 7, percent: 38.9 },
-    { name: 'TypeScript', repos: 5, percent: 27.8 },
-    { name: 'JavaScript', repos: 3, percent: 16.7 },
-    { name: 'CSS', repos: 2, percent: 11.1 },
-    { name: 'Python', repos: 1, percent: 5.5 },
+    { name: 'TypeScript', repos: 2, percent: 50 },
+    { name: 'JavaScript', repos: 1, percent: 25 },
+    { name: 'Java', repos: 1, percent: 25 },
   ],
   recentRepos: [
-    { name: 'portfolio', description: 'This website: React, Three.js and Spring Boot', language: 'TypeScript', stars: 6, url: '#', pushedAt: '2026-10-12T00:00:00Z' },
-    { name: 'shopdesk', description: 'Admin dashboard for small online shops', language: 'Java', stars: 14, url: '#', pushedAt: '2026-09-30T00:00:00Z' },
-    { name: 'family-balance', description: 'Real-time multiplayer party game', language: 'JavaScript', stars: 11, url: '#', pushedAt: '2026-08-21T00:00:00Z' },
-    { name: 'momcare', description: 'Pregnancy tracking web app (team project)', language: 'Java', stars: 5, url: '#', pushedAt: '2026-06-02T00:00:00Z' },
+    { name: 'Portfolio', description: 'This website: React, Three.js and Spring Boot', language: 'TypeScript', stars: 0, url: 'https://github.com/TriLN91/Portfolio', pushedAt: '2026-10-15T00:00:00Z' },
+    { name: 'GymManagement_UI', description: 'FitFlex AI: AI fitness coaching & gym platform', language: 'TypeScript', stars: 0, url: 'https://github.com/TriLN91/GymManagement_UI', pushedAt: '2026-10-01T00:00:00Z' },
   ],
 }
 
@@ -36,7 +32,9 @@ export function GitHubActivity() {
 
   useEffect(() => {
     const ctrl = new AbortController()
+    // Backend first (cached, no rate limit); then GitHub directly; else keep the sample
     getGitHubStats(ctrl.signal)
+      .catch(() => getGitHubStatsDirect(profile.githubUsername, ctrl.signal))
       .then((s) => {
         setStats(s)
         setLive(true)
@@ -52,7 +50,7 @@ export function GitHubActivity() {
     { value: stats.publicRepos, label: ui.github.repos },
     { value: stats.totalStars, label: ui.github.stars },
     { value: stats.followers, label: ui.github.followers },
-  ]
+  ].filter((tile) => tile.value > 0) // a "0" tile reads as a weakness; hide it
 
   return (
     <section id="github" className="bg-bg py-[clamp(72px,10vw,140px)]">
@@ -69,7 +67,7 @@ export function GitHubActivity() {
 
         <div className="grid gap-6 lg:grid-cols-[1fr_1.3fr]">
           <FadeIn className="min-w-0 rounded-2xl border border-line bg-surface p-7">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="flex flex-wrap gap-x-10 gap-y-4">
               {tiles.map((tile) => (
                 <div key={tile.label.en}>
                   <b className="block font-display text-4xl font-bold tabular-nums">{tile.value}</b>

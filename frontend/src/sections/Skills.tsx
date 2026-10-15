@@ -48,7 +48,7 @@ export function Skills() {
           <p className="max-w-[46ch] text-muted">{t(ui.skills.intro)}</p>
         </div>
 
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
           {skills.map((g, i) => (
             <FadeIn key={g.name.en} delay={i * 0.08} className="bg-surface p-7">
               <h3 className="mb-1 text-xl font-bold">{t(g.name)}</h3>

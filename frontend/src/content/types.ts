@@ -8,7 +8,7 @@ export type RenderKind = 'dash' | 'track' | 'game'
 export interface Project {
   slug: string
   title: string
-  year: string
+  year?: string
   kind: L
   role: L
   status: 'live' | 'completed' | 'in-progress'
@@ -21,20 +21,22 @@ export interface Project {
   render: RenderKind
   /** Optional real screenshot, e.g. "/shots/shopdesk.png" (put the file in /public/shots) */
   image?: string
+  /** Optional demo video (webm/mp4) in /public/shots, shown instead of the image */
+  video?: string
   demo?: string
   code?: string
   caseStudy: {
     problem: L
     solution: L
     architecture: string[]
-    decisions: L[]
-    results: { value: string; label: L }[]
-    learnings: L
+    decisions?: L[]
+    results?: { value: string; label: L }[]
+    learnings?: L
   }
 }
 
 export interface ExperienceItem {
-  period: string
+  period?: string
   title: L
   org: string
   type: 'work' | 'education' | 'leadership'
@@ -52,6 +54,8 @@ export interface SkillGroup {
 
 export interface Profile {
   name: string
+  /** Letters in the logo badge, e.g. "LNT" */
+  initials: string
   role: L
   status: L
   lede: L

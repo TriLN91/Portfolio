@@ -61,10 +61,13 @@ export function Home() {
 
   return (
     <PageTransition>
-      <div ref={canvasWrap} className="pointer-events-none fixed inset-0 z-0 opacity-30 sm:opacity-75 lg:opacity-100" aria-hidden="true">
-        <Suspense fallback={null}>
-          <TreeScene active={active} />
-        </Suspense>
+      {/* Outer layer: scroll fade (GSAP). Inner layer: dimmer on small screens so text stays readable. */}
+      <div ref={canvasWrap} className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
+        <div className="h-full w-full opacity-30 sm:opacity-75 lg:opacity-100">
+          <Suspense fallback={null}>
+            <TreeScene active={active} />
+          </Suspense>
+        </div>
       </div>
       <main className="relative z-10">
         <Hero />

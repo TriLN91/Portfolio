@@ -46,6 +46,6 @@ app:
     max-per-hour: ${CONTACT_MAX_PER_HOUR:5}
     ip-salt: ${CONTACT_IP_SALT:change-me}
   github:
-    username: ${GITHUB_USERNAME:octocat}
+    username: ${GITHUB_USERNAME:TriLN91}
     token: ${GITHUB_TOKEN:}
     cache-minutes: ${GITHUB_CACHE_MINUTES:60}

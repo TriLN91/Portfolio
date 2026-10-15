@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Le Ngoc Tri - CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* One accent color + black/grey text. A4, single page. */
+  :root { --accent: #2440c8; --ink: #16181d; --muted: #5b6070; --line: #d9dce4; }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+    font-size: 9.5pt; line-height: 1.42; color: var(--ink);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { width: 210mm; height: 297mm; padding: 13mm 16mm 11mm; overflow: hidden; }
+
+  header { display: flex; gap: 6mm; align-items: center; padding-bottom: 4mm; border-bottom: 2px solid var(--accent); }
+  header .id { flex: 1; }
+  h1 { margin: 0; font-size: 24pt; line-height: 1.1; font-weight: 700; letter-spacing: -0.01em; }
+  .role { margin: 1.5mm 0 3mm; font-size: 12pt; font-weight: 600; color: var(--accent); }
+  .contact { display: flex; flex-wrap: wrap; gap: 1mm 5mm; color: var(--muted); font-size: 9pt; }
+  .contact b { color: var(--ink); font-weight: 500; }
+  .photo { width: 27mm; height: 27mm; border-radius: 3mm; object-fit: cover; }
+
+  section { margin-top: 4.2mm; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+  .split section { margin-top: 0; }
+  h2 {
+    margin: 0 0 2.2mm; padding-bottom: 1mm; border-bottom: 1px solid var(--line);
+    font-size: 9.5pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+  }
+  p { margin: 0; }
+  .item + .item { margin-top: 2.6mm; }
+  .row { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+  .title { font-weight: 600; font-size: 10.3pt; }
+  .title span { font-weight: 400; color: var(--muted); }
+  .when { flex: none; color: var(--muted); font-size: 9pt; }
+  .meta { color: var(--muted); font-size: 9pt; margin-top: 0.3mm; }
+  ul { margin: 1.2mm 0 0; padding-left: 4.2mm; }
+  li { margin: 0.6mm 0; }
+  li::marker { color: var(--accent); }
+  .tech { margin-top: 0.8mm; font-size: 8.6pt; color: var(--muted); }
+  .tech b { color: var(--ink); font-weight: 500; }
+
+  .skills { display: grid; grid-template-columns: 24mm 1fr; gap: 1.2mm 4mm; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="id">
+      <h1>Lê Ngọc Trí</h1>
+      <div class="role">Full-stack Developer · Fresher</div>
+      <div class="contact">
+        <span><b>nightt9104@gmail.com</b></span>
+        <span>Zalo: <b>0353 857 111</b></span>
+        <span><b>github.com/TriLN91</b></span>
+        <span>Ho Chi Minh City</span>
+      </div>
+    </div>
+    <img class="photo" src="../frontend/public/avatar.jpg" alt="">
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p>Software Engineering student at FPT University with a strong frontend foundation in React and TypeScript and working
+      experience with Spring Boot and PostgreSQL. Experienced in team projects from business analysis to UI testing.
+      Looking for a Fresher / Junior full-stack role. Available immediately.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="item">
+      <div class="row">
+        <div class="title">Frontend Intern <span>· FPT Software</span></div>
+        <div class="when">09/2025 – 12/2025</div>
+      </div>
+      <ul>
+        <li>Contributed to the frontend of a hospital management system.</li>
+        <li>Gained hands-on experience with a microservices architecture and how the frontend integrates with multiple backend services.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="item">
+      <div class="row">
+        <div class="title">FitFlex AI <span>· AI Fitness Coaching &amp; Gym Platform</span></div>
+        <div class="when">2026</div>
+      </div>
+      <div class="meta">Capstone project · Team of 4 · Role: UI/UX, business analysis, frontend &amp; backend</div>
+      <ul>
+        <li>Designed and refined the user interface; analyzed requirements for coaching, gym and trainer flows.</li>
+        <li>Built the backend for a core flow: workout progression tracking.</li>
+      </ul>
+      <div class="tech"><b>Tech:</b> React, TypeScript, Tailwind CSS, Spring Boot, PostgreSQL · github.com/TriLN91/GymManagement_UI</div>
+    </div>
+
+    <div class="item">
+      <div class="row">
+        <div class="title">GrandStride <span>· Horse Racing Management Platform</span></div>
+        <div class="when"></div>
+      </div>
+      <div class="meta">Course project · Team of 5 · Role: Business analysis, frontend &amp; UI testing</div>
+      <ul>
+        <li>Analyzed business flows for race organization, horse registration and betting.</li>
+        <li>Built frontend pages with React and Tailwind CSS and tested the UI across pages.</li>
+      </ul>
+      <div class="tech"><b>Tech:</b> React, JavaScript, Tailwind CSS, Spring Boot, PostgreSQL, Supabase · github.com/MyHanh264/HorseRace.FE</div>
+    </div>
+
+    <div class="item">
+      <div class="row">
+        <div class="title">Personal Portfolio <span>· Full-stack web application</span></div>
+        <div class="when">2026</div>
+      </div>
+      <div class="meta">Personal project · Solo</div>
+      <ul>
+        <li>React + Three.js frontend with a 3D scroll-driven scene and bilingual content (English / Vietnamese).</li>
+        <li>Spring Boot REST API with PostgreSQL: contact form with email notification and spam protection, GitHub stats; Docker and CI.</li>
+      </ul>
+      <div class="tech"><b>Tech:</b> React, TypeScript, Three.js, Spring Boot, PostgreSQL, Docker · github.com/TriLN91/Portfolio</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Frontend</dt><dd>React, TypeScript, JavaScript, HTML/CSS, Tailwind CSS</dd>
+      <dt>Backend</dt><dd>Java, Spring Boot, REST APIs</dd>
+      <dt>Database</dt><dd>PostgreSQL, Supabase</dd>
+      <dt>Tools</dt><dd>Git/GitHub, Figma, Swagger, Docker Compose</dd>
+      <dt>Other</dt><dd>Business analysis (use cases), UI testing</dd>
+    </dl>
+  </section>
+
+  <div class="split" style="margin-top:4.2mm">
+    <section>
+      <h2>Education</h2>
+      <div class="title">B.Sc. Software Engineering</div>
+      <div class="meta">FPT University, Ho Chi Minh City</div>
+    </section>
+    <section>
+      <h2>Languages</h2>
+      <div class="title">English, Japanese</div>
+      <div class="meta">Basic communication, reading technical documents</div>
+    </section>
+  </div>
+
+</div>
+</body>
+</html>

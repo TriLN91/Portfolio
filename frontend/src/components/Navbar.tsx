@@ -15,12 +15,7 @@ const LINKS = [
   { id: '#contact', label: ui.nav.contact },
 ]
 
-export const initials = profile.name
-  .split(/\s+/)
-  .map((w) => w[0])
-  .slice(-2)
-  .join('')
-  .toUpperCase()
+export const initials = profile.initials
 
 export function Navbar() {
   const { t, lang, setLang } = useLang()
@@ -60,7 +55,7 @@ export function Navbar() {
       >
         <nav className="wrap flex h-16 items-center gap-6" aria-label="Main">
           <Link to="/" className="flex items-center gap-2.5 font-display text-[17px] font-bold" onClick={() => go('#top')}>
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink font-mono text-xs text-bg">{initials}</span>
+            <span className="grid h-8 min-w-8 place-items-center rounded-lg bg-ink px-1.5 font-mono text-[11px] text-bg">{initials}</span>
             <span className="hidden sm:inline">{profile.name}</span>
           </Link>
 

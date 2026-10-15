@@ -91,8 +91,19 @@ export function ProductRender({ project, className = '' }: { project: Project; c
         </span>
       </div>
       <div className="relative aspect-[16/10] max-w-full overflow-hidden">
-        {project.image ? (
-          <img src={project.image} alt="" className="h-full w-full object-cover" loading="lazy" />
+        {project.video ? (
+          <video
+            src={project.video}
+            poster={project.image}
+            className="h-full w-full object-cover object-top"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+        ) : project.image ? (
+          <img src={project.image} alt="" className="h-full w-full object-cover object-top" loading="lazy" />
         ) : (
           <Render />
         )}
