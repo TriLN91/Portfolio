@@ -55,3 +55,8 @@ app:
     username: ${GITHUB_USERNAME:TriLN91}
     token: ${GITHUB_TOKEN:}
     cache-minutes: ${GITHUB_CACHE_MINUTES:60}
+  resend:
+    # When set, notification emails are sent via the Resend HTTPS API instead of SMTP
+    # (most free hosts, Render included, block outbound SMTP). Leave empty for local dev with Mailpit.
+    api-key: ${RESEND_API_KEY:}
+    from: ${RESEND_FROM:Portfolio <onboarding@resend.dev>}
