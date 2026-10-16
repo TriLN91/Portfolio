@@ -36,6 +36,12 @@ management:
     web:
       exposure:
         include: health
+  health:
+    # Mail failures are already handled gracefully in ContactNotifier (logged, not fatal),
+    # so a temporarily unreachable SMTP server should not take the whole app "down"
+    # and make Render stop routing traffic to it.
+    mail:
+      enabled: false
 
 app:
   # Comma-separated list of frontend URLs allowed to call the API
