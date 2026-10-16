@@ -1,4 +1,6 @@
-const BASE = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '')
+// VITE_API_URL_PORTFOLIO is the name actually used on Vercel (VITE_API_URL was rejected there);
+// VITE_API_URL is kept as a fallback for other hosts/local use.
+const BASE = (import.meta.env.VITE_API_URL_PORTFOLIO ?? import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '')
 
 export class ApiError extends Error {
   constructor(
