@@ -149,6 +149,7 @@ export const projects: Project[] = [
       { en: 'Procedural 3D tree rendered with instanced meshes in React Three Fiber', vi: 'Cây 3D sinh bằng thuật toán, render bằng instanced mesh trong React Three Fiber' },
       { en: 'Smooth scroll, pinned horizontal gallery and page transitions (GSAP, Framer Motion)', vi: 'Smooth scroll, gallery ghim trượt ngang và chuyển trang (GSAP, Framer Motion)' },
       { en: 'Spring Boot API with PostgreSQL, email alerts, spam protection and CI', vi: 'API Spring Boot với PostgreSQL, gửi email, chống spam và CI' },
+      { en: 'Built end to end with AI-assisted development (Claude Code), including debugging the production deploy', vi: 'Phát triển toàn bộ với sự hỗ trợ của AI (Claude Code), kể cả gỡ lỗi khi triển khai thật' },
     ],
     stack: ['React', 'TypeScript', 'Three.js', 'GSAP', 'Tailwind CSS', 'Spring Boot', 'PostgreSQL', 'Docker'],
     render: 'dash',
@@ -215,6 +216,12 @@ export const skills: SkillGroup[] = [
     note: { en: 'Design, collaboration, delivery', vi: 'Thiết kế, làm việc nhóm, triển khai' },
     core: ['Git / GitHub', 'Figma', 'Swagger', 'Docker Compose'],
     more: ['Use case analysis', 'UI testing'],
+  },
+  {
+    name: { en: 'AI-assisted development', vi: 'Làm việc cùng AI' },
+    note: { en: 'Using AI tools to build and ship faster', vi: 'Dùng công cụ AI để xây dựng và triển khai nhanh hơn' },
+    core: ['Claude Code', 'Effective prompting'],
+    more: ['Reviewing AI-generated code'],
   },
 ]
 
