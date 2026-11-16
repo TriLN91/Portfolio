@@ -71,9 +71,10 @@ export const projects: Project[] = [
       vi: 'Nền tảng huấn luyện thể hình bằng AI và dịch vụ phòng gym. Hệ thống phân tích thể trạng và mục tiêu sức khỏe, lên lịch tập và chế độ dinh dưỡng, phân tích chuyển động để sửa form cho người tập, đồng thời kết nối với phòng gym và huấn luyện viên.',
     },
     impact: [
-      { en: 'Designed and refined the user interface, then built it in React', vi: 'Thiết kế, cải thiện giao diện và hiện thực bằng React' },
+      { en: 'Designed 39 UI screens across Member and Trainer roles in 2-week Agile sprints', vi: 'Thiết kế 39 màn hình UI cho vai trò Member và Trainer trong các sprint Agile 2 tuần' },
       { en: 'Analyzed business requirements for coaching, gym and trainer flows', vi: 'Phân tích nghiệp vụ cho các luồng huấn luyện, phòng gym và huấn luyện viên' },
-      { en: 'Built the backend for a core flow: workout progression', vi: 'Code backend cho một core flow: theo dõi tiến độ tập luyện' },
+      { en: 'Implemented the backend for workout progression tracking with Spring Boot, JPA/Hibernate and an MVC design pattern', vi: 'Code backend theo dõi tiến độ tập luyện bằng Spring Boot, JPA/Hibernate và mẫu thiết kế MVC' },
+      { en: 'Presented the finished product to faculty reviewers at the capstone defense', vi: 'Trình bày sản phẩm hoàn chỉnh trước hội đồng giảng viên khi bảo vệ đồ án' },
     ],
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'PostgreSQL'],
     render: 'dash',
@@ -113,7 +114,7 @@ export const projects: Project[] = [
       vi: 'Nền tảng quản lý trường đua ngựa: tổ chức giải đấu và lịch đua, chủ ngựa đăng ký ngựa, người hâm mộ theo dõi bảng xếp hạng và đặt cược ở cùng một nơi.',
     },
     impact: [
-      { en: 'Analyzed business flows for races, horse registration and betting', vi: 'Phân tích nghiệp vụ các luồng giải đua, đăng ký ngựa và đặt cược' },
+      { en: 'Analyzed business flows for races, horse registration and betting for a 5-person Agile team', vi: 'Phân tích nghiệp vụ các luồng giải đua, đăng ký ngựa và đặt cược cho nhóm 5 người làm theo Agile' },
       { en: 'Built the frontend pages with React and Tailwind CSS', vi: 'Xây dựng các trang frontend bằng React và Tailwind CSS' },
       { en: 'Tested the UI across pages and reported issues to the team', vi: 'Kiểm thử giao diện các trang và báo lỗi cho nhóm' },
     ],
@@ -146,9 +147,10 @@ export const projects: Project[] = [
       vi: 'Chính website bạn đang xem: cây 3D phát triển dựng bằng Three.js, hiệu ứng cuộn mượt, nội dung song ngữ Anh – Việt, cùng backend Spring Boot lưu tin nhắn liên hệ và cung cấp số liệu GitHub trực tiếp.',
     },
     impact: [
+      { en: 'Self-taught Three.js and Resend outside the coursework to ship new features', vi: 'Tự học Three.js và Resend ngoài chương trình học để làm ra các tính năng mới' },
       { en: 'Procedural 3D tree rendered with instanced meshes in React Three Fiber', vi: 'Cây 3D sinh bằng thuật toán, render bằng instanced mesh trong React Three Fiber' },
-      { en: 'Smooth scroll, pinned horizontal gallery and page transitions (GSAP, Framer Motion)', vi: 'Smooth scroll, gallery ghim trượt ngang và chuyển trang (GSAP, Framer Motion)' },
-      { en: 'Spring Boot API with PostgreSQL, email alerts, spam protection and CI', vi: 'API Spring Boot với PostgreSQL, gửi email, chống spam và CI' },
+      { en: 'Spring Boot REST API (JPA/Hibernate) with PostgreSQL, email alerts and spam protection', vi: 'REST API Spring Boot (JPA/Hibernate) với PostgreSQL, gửi email và chống spam' },
+      { en: 'Containerized with Docker and automated with CI/CD; reached a 100/100 SEO and 96/100 Best Practices score on Google PageSpeed Insights', vi: 'Đóng gói bằng Docker, tự động hóa với CI/CD; đạt điểm 100/100 SEO và 96/100 Best Practices trên Google PageSpeed Insights' },
       { en: 'Built end to end with AI-assisted development (Claude Code), including debugging the production deploy', vi: 'Phát triển toàn bộ với sự hỗ trợ của AI (Claude Code), kể cả gỡ lỗi khi triển khai thật' },
     ],
     stack: ['React', 'TypeScript', 'Three.js', 'GSAP', 'Tailwind CSS', 'Spring Boot', 'PostgreSQL', 'Docker'],
@@ -203,7 +205,7 @@ export const skills: SkillGroup[] = [
     name: { en: 'Backend', vi: 'Backend' },
     note: { en: 'APIs and business logic', vi: 'API và nghiệp vụ' },
     core: ['Java', 'Spring Boot', 'REST APIs'],
-    more: ['Microservices'],
+    more: ['Microservices', 'OOP', 'Design Patterns (MVC)', 'JPA/Hibernate'],
   },
   {
     name: { en: 'Database', vi: 'Cơ sở dữ liệu' },
@@ -215,7 +217,7 @@ export const skills: SkillGroup[] = [
     name: { en: 'Tools & workflow', vi: 'Công cụ & quy trình' },
     note: { en: 'Design, collaboration, delivery', vi: 'Thiết kế, làm việc nhóm, triển khai' },
     core: ['Git / GitHub', 'Figma', 'Swagger', 'Docker Compose'],
-    more: ['Use case analysis', 'UI testing'],
+    more: ['Agile/Scrum', 'Use case analysis', 'UI testing'],
   },
   {
     name: { en: 'Cloud & DevOps', vi: 'Cloud & DevOps' },
@@ -238,8 +240,8 @@ export const experience: ExperienceItem[] = [
     org: 'FPT Software',
     type: 'work',
     text: {
-      en: 'Worked on the frontend of a hospital management system. Learned how a microservices architecture is organized and how the frontend works with multiple backend services.',
-      vi: 'Tham gia phát triển frontend cho hệ thống quản lý bệnh viện. Học được cách tổ chức kiến trúc microservices và cách frontend làm việc với nhiều dịch vụ backend.',
+      en: 'Delivered 2 UI modules for a hospital management system, integrating the frontend with 2 backend microservices via REST APIs. Collaborated daily with the backend team using Git to align on API contracts.',
+      vi: 'Hoàn thành 2 module UI cho hệ thống quản lý bệnh viện, tích hợp frontend với 2 microservice backend qua REST API. Phối hợp hằng ngày với nhóm backend bằng Git để thống nhất API contract.',
     },
   },
   {
