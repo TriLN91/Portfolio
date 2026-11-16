@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG image</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0d1017; --fg: #e9ecf4; --muted: #9aa2b8; --accent: #8196ff; --signal: #f29a5e; --line: #272e3e; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: var(--bg); color: var(--fg);
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    position: relative;
+  }
+  .bg-dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(129,150,255,0.18) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse 900px 500px at 70% 30%, black 40%, transparent 75%);
+  }
+  .glow {
+    position: absolute; right: -120px; top: -120px; width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(129,150,255,0.35), transparent 70%);
+  }
+  .card { position: relative; height: 100%; padding: 72px 76px; display: flex; flex-direction: column; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .badge { width: 52px; height: 52px; border-radius: 14px; background: var(--fg); color: var(--bg); display: flex; align-items: center; justify-content: center; font: 700 20px "JetBrains Mono", monospace; }
+  .brand-name { font: 600 22px "Be Vietnam Pro"; color: var(--fg); }
+  .status { margin-left: auto; display: flex; align-items: center; gap: 10px; font: 500 16px "JetBrains Mono", monospace; color: #7fd9ae; background: rgba(127,217,174,0.12); padding: 9px 18px; border-radius: 999px; }
+  .status i { width: 9px; height: 9px; border-radius: 50%; background: #7fd9ae; display: block; }
+  .main h1 { margin: 0; font: 800 76px/1.02 "Bricolage Grotesque"; letter-spacing: -0.01em; color: var(--fg); }
+  .main .role { margin: 14px 0 0; font: 700 34px "Bricolage Grotesque"; color: var(--accent); }
+  .main p { margin: 22px 0 0; font: 400 22px/1.5 "Be Vietnam Pro"; color: var(--muted); max-width: 760px; }
+  .foot { display: flex; align-items: center; gap: 28px; padding-top: 28px; border-top: 1px solid var(--line); font: 500 20px "JetBrains Mono", monospace; color: var(--fg); }
+  .foot span.dim { color: var(--muted); }
+  .foot .dot { color: var(--signal); }
+</style>
+</head>
+<body>
+  <div class="bg-dots"></div>
+  <div class="glow"></div>
+  <div class="card">
+    <div class="brand">
+      <div class="badge">LNT</div>
+      <div class="brand-name">Lê Ngọc Trí</div>
+      <div class="status"><i></i>Open to Fresher / Junior</div>
+    </div>
+    <div class="main">
+      <h1>Full-stack<br>Developer</h1>
+      <p>React · TypeScript · Spring Boot · PostgreSQL — projects, case studies and a live product, not just a list of skills.</p>
+    </div>
+    <div class="foot">
+      <span>portfolio-pink-beta-sgsge9ob8c.vercel.app</span>
+      <span class="dot">·</span>
+      <span class="dim">github.com/TriLN91</span>
+    </div>
+  </div>
+</body>
+</html>
