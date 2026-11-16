@@ -7,6 +7,9 @@ backend/target/
 .env
 .env.local
 .env.*.local
+DATABASE_URL*.txt
+*secrets*.txt
+*.key
 
 # IDE / OS
 .idea/

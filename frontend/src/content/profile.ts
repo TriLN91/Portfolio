@@ -218,6 +218,12 @@ export const skills: SkillGroup[] = [
     more: ['Use case analysis', 'UI testing'],
   },
   {
+    name: { en: 'Cloud & DevOps', vi: 'Cloud & DevOps' },
+    note: { en: 'Deploying and operating real systems', vi: 'Triển khai và vận hành hệ thống thật' },
+    core: ['Vercel', 'Render', 'Docker', 'GitHub Actions (CI)'],
+    more: ['Neon (PostgreSQL)', 'Environment config', 'CORS'],
+  },
+  {
     name: { en: 'AI-assisted development', vi: 'Làm việc cùng AI' },
     note: { en: 'Using AI tools to build and ship faster', vi: 'Dùng công cụ AI để xây dựng và triển khai nhanh hơn' },
     core: ['Claude Code', 'Effective prompting'],
