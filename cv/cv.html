@@ -17,7 +17,7 @@
     font-size: 9.5pt; line-height: 1.42; color: var(--ink);
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  .page { width: 210mm; height: 297mm; padding: 13mm 16mm 11mm; overflow: hidden; }
+  .page { width: 210mm; height: 297mm; padding: 11mm 16mm 7mm; overflow: hidden; }
 
   header { display: flex; gap: 6mm; align-items: center; padding-bottom: 4mm; border-bottom: 2px solid var(--accent); }
   header .id { flex: 1; }
@@ -28,7 +28,7 @@
   .contact a { color: inherit; text-decoration: none; }
   .photo { width: 27mm; height: 27mm; border-radius: 3mm; object-fit: cover; }
 
-  section { margin-top: 4.2mm; }
+  section { margin-top: 3.4mm; }
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
   .split section { margin-top: 0; }
   h2 {
@@ -73,9 +73,9 @@
 
   <section>
     <h2>Summary</h2>
-    <p>Software Engineering student at FPT University with a strong frontend foundation in React and TypeScript and working
-      experience with Spring Boot and PostgreSQL. Works effectively with AI coding tools (Claude Code) to build and ship
-      faster without sacrificing code quality. Looking for a Fresher / Junior full-stack role, available immediately.</p>
+    <p>Software Engineering student at FPT University with a strong frontend foundation in React/TypeScript and backend
+      experience in Spring Boot and PostgreSQL. Ships faster with AI coding tools (Claude Code) without sacrificing code
+      quality. Seeking a Fresher / Junior full-stack role, available immediately.</p>
   </section>
 
   <section>
@@ -86,8 +86,8 @@
         <div class="when">09/2025 – 12/2025</div>
       </div>
       <ul>
-        <li>Delivered 2 UI modules for a hospital management system, integrating the frontend with 2 backend microservices.</li>
-        <li>Collaborated with backend developers across service boundaries to align on API contracts in a microservices architecture.</li>
+        <li>Delivered 2 UI modules for a hospital management system, integrating the frontend with 2 backend microservices via REST APIs.</li>
+        <li>Collaborated daily with backend developers using Git to align on API contracts in a microservices architecture.</li>
       </ul>
     </div>
   </section>
@@ -102,8 +102,8 @@
       </div>
       <div class="meta">Capstone project · Team of 4 · Role: UI/UX, business analysis, frontend &amp; backend</div>
       <ul>
-        <li>Designed 39 UI screens across Member and Trainer roles, translating business requirements into coaching, gym and trainer workflows.</li>
-        <li>Implemented the backend for workout progression tracking, a core flow used by trainers and members to monitor progress.</li>
+        <li>Designed 39 UI screens across Member and Trainer roles in 2-week Agile sprints, translating requirements into coaching, gym and trainer workflows.</li>
+        <li>Implemented the backend for workout progression tracking (Spring Boot, Spring Data JPA, MVC pattern); presented the product to faculty reviewers.</li>
       </ul>
       <div class="tech"><b>Tech:</b> React, TypeScript, Tailwind CSS, Spring Boot, PostgreSQL · github.com/TriLN91/GymManagement_UI</div>
     </div>
@@ -115,8 +115,7 @@
       </div>
       <div class="meta">Course project · Team of 5 · Role: Business analysis, frontend &amp; UI testing</div>
       <ul>
-        <li>Analyzed business flows for race organization, horse registration and betting.</li>
-        <li>Implemented frontend pages with React and Tailwind CSS and tested the UI across pages.</li>
+        <li>Analyzed business flows for race organization, horse registration and betting, then implemented and tested the React/Tailwind CSS frontend for a 5-person Agile team.</li>
       </ul>
       <div class="tech"><b>Tech:</b> React, JavaScript, Tailwind CSS, Spring Boot, PostgreSQL, Supabase · github.com/MyHanh264/HorseRace.FE</div>
     </div>
@@ -128,9 +127,8 @@
       </div>
       <div class="meta">Personal project · Solo</div>
       <ul>
-        <li>Built a React + Three.js frontend with a 3D scroll-driven scene and bilingual content (English / Vietnamese).</li>
-        <li>Implemented a Spring Boot REST API with PostgreSQL: contact form with email notification and spam protection, GitHub stats integration; containerized with Docker and automated with CI.</li>
-        <li>Deployed to production (Vercel, Render, Neon), resolving live issues (CORS misconfiguration, blocked outbound SMTP port) and reaching a 100/100 SEO and 96/100 Best Practices score on Google PageSpeed Insights.</li>
+        <li>Self-taught Three.js and Resend outside the coursework to build a React frontend with a 3D scroll-driven scene and bilingual content (English / Vietnamese).</li>
+        <li>Implemented a Spring Boot REST API (JPA/Hibernate, PostgreSQL): contact form with email notification, GitHub stats; containerized with Docker, automated with CI/CD, deployed (Vercel, Render, Neon) — reaching 100/100 SEO, 96/100 Best Practices on PageSpeed Insights.</li>
       </ul>
       <div class="tech"><b>Tech:</b> React, TypeScript, Three.js, Spring Boot, PostgreSQL, Docker · github.com/TriLN91/Portfolio</div>
     </div>
@@ -140,12 +138,11 @@
     <h2>Skills</h2>
     <dl class="skills">
       <dt>Frontend</dt><dd>React, TypeScript, JavaScript, HTML/CSS, Tailwind CSS</dd>
-      <dt>Backend</dt><dd>Java, Spring Boot, REST APIs</dd>
+      <dt>Backend</dt><dd>Java, Spring Boot, JPA/Hibernate, REST APIs</dd>
+      <dt>Practices</dt><dd>OOP, Design Patterns (MVC), Microservices, Agile/Scrum</dd>
       <dt>Database</dt><dd>PostgreSQL, Supabase</dd>
       <dt>Tools</dt><dd>Git/GitHub, Figma, Swagger, Docker Compose</dd>
-      <dt>DevOps</dt><dd>Vercel, Render, Docker, GitHub Actions (CI)</dd>
-      <dt>AI tools</dt><dd>Claude Code (AI-assisted development), effective prompting</dd>
-      <dt>Other</dt><dd>Business analysis (use cases), UI testing</dd>
+      <dt>DevOps</dt><dd>Vercel, Render, Docker, GitHub Actions (CI/CD)</dd>
     </dl>
   </section>
 
